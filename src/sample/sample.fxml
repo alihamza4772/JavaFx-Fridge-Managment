@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="503.0" prefWidth="555.0" stylesheets="@demo.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FridgeDSC">
+    <children>
+        <TextField id="INPUT" fx:id="filterbox" layoutX="6.0" layoutY="7.0" onAction="#filtertextbox" prefHeight="26.0" prefWidth="159.0" />
+        <ComboBox fx:id="filterbybox" layoutX="232.0" layoutY="7.0" onAction="#filterby_onaction" prefWidth="150.0" />
+        <CheckBox fx:id="expire_checkbox" alignment="TOP_LEFT" layoutX="395.0" layoutY="10.0" mnemonicParsing="false" onAction="#expire_onaction" prefHeight="26.0" prefWidth="159.0" text="Show Expires Only">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </CheckBox>
+        <TableView id="table" fx:id="Home_table" editable="true" layoutY="42.0" onMouseClicked="#table_click" prefHeight="277.0" prefWidth="554.0">
+            <columns>
+                <TableColumn id="col_id" fx:id="id" prefWidth="85.0" text="ID" />
+                <TableColumn id="col_item" fx:id="item" prefWidth="137.0" text="Item" />
+                <TableColumn id="col_qty" fx:id="quantity" prefWidth="78.0" text="QTY" />
+                <TableColumn id="col_section" fx:id="section" prefWidth="125.0" text="Section" />
+                <TableColumn id="col_bought" fx:id="bought" prefWidth="122.0" text="Bought" />
+            </columns>
+        </TableView>
+        <Separator fx:id="sep2" layoutX="5.0" layoutY="332.0" prefHeight="3.0" prefWidth="545.0" />
+        <ButtonBar layoutX="-5.0" layoutY="457.0" prefHeight="35.0" prefWidth="545.0">
+            <buttons>
+                <Button id="addbtn" fx:id="AddBtn" mnemonicParsing="false" onAction="#AddButton_click" prefHeight="35.0" prefWidth="179.0" text="Add" />
+                <Button id="updatebtn" fx:id="updatebtn" mnemonicParsing="false" onAction="#updatebtn_click" prefHeight="35.0" prefWidth="112.0" text="Update One" />
+                <Button id="delbtn" minWidth="34.0" mnemonicParsing="false" onAction="#deletebutton_click" prefHeight="35.0" prefWidth="112.0" text="Delete" />
+            </buttons>
+        </ButtonBar>
+        <Label alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="169.0" layoutY="10.0" prefHeight="26.0" prefWidth="75.0" text="Filter By :" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Label fx:id="itemlabel_add" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="14.0" layoutY="331.0" prefHeight="26.0" prefWidth="33.0" text="Item" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="selectbox_add" layoutX="13.0" layoutY="354.0" prefHeight="26.0" prefWidth="225.0" />
+        <Label fx:id="sectionlabel_add" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="252.0" layoutY="331.0" prefHeight="26.0" prefWidth="55.0" text="Section" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="sectionbox" layoutX="252.0" layoutY="354.0" prefHeight="26.0" prefWidth="149.0" />
+        <Label fx:id="quantitylabel_add" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="420.0" layoutY="331.0" prefHeight="26.0" prefWidth="55.0" text="Quantity" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <TextField id="INPUT" fx:id="quantitytextbox" layoutX="419.0" layoutY="355.0" prefHeight="26.0" prefWidth="125.0" />
+        <Button fx:id="cancelbutton" layoutX="275.0" layoutY="402.0" mnemonicParsing="false" onAction="#CANCEL_CLICK_ADD" prefHeight="26.0" prefWidth="91.0" text="CANCEL" />
+        <Button fx:id="savebutton" layoutX="180.0" layoutY="402.0" mnemonicParsing="false" onAction="#savebtn_click" prefHeight="26.0" prefWidth="85.0" text="SAVE" />
+        <Label fx:id="updateqtylabel" alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="40.0" layoutY="387.0" prefHeight="26.0" prefWidth="63.0" text="Quantity :" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <TextField id="INPUT" fx:id="updateqtytext" layoutX="117.0" layoutY="384.0" prefHeight="26.0" prefWidth="125.0" />
+        <Button fx:id="canclebuttonupdate" layoutX="369.0" layoutY="384.0" mnemonicParsing="false" onAction="#CANCEL_CLICK_UPDATE" prefHeight="35.0" prefWidth="99.0" text="CANCEL" />
+        <Button fx:id="updatebutton" layoutX="278.0" layoutY="384.0" mnemonicParsing="false" onAction="#updatebuttonclick" prefHeight="35.0" prefWidth="85.0" text="UPDATE" />
+      <Separator fx:id="sep1" layoutX="3.0" layoutY="331.0" orientation="VERTICAL" prefHeight="114.0" prefWidth="5.0" />
+      <Separator fx:id="sep4" layoutX="4.0" layoutY="443.0" prefHeight="3.0" prefWidth="545.0" />
+      <Separator fx:id="sep3" layoutX="547.0" layoutY="331.0" orientation="VERTICAL" prefHeight="114.0" prefWidth="5.0" />
+    </children>
+</AnchorPane>
